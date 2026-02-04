@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +16,12 @@
 <!-- HERO -->
 <section class="hero">
   <h1>Hi my love ❤️</h1>
-  <p>This little website is just for you.</p>
+  <p>This website is just for you 🥹</p>
 </section>
 
 <!-- COUNTDOWN -->
 <section class="countdown">
-  <h2>Our 4 Months In ⏳</h2>
+  <h2>Our 4 Months Countdown ⏳</h2>
   <p id="timer"></p>
 </section>
 
@@ -32,37 +33,61 @@
     <img src="photo2.jpg">
     <img src="photo3.jpg">
   </div>
-  <p class="note">Every picture here means everything to me.</p>
+  <p class="note">Every picture here holds a piece of my heart 💖</p>
 </section>
 
-<!-- GAME -->
+<!-- GAME 1: Love Quiz -->
 <section class="game">
-  <h2>How Well Do You Know Us? </h2>
-  <p id="question"></p>
-
+  <h2>How Well Do You Know Us? 🎮</h2>
+  <p id="quizQuestion"></p>
   <div class="buttons">
-    <button onclick="answer(0)">Option 1</button>
-    <button onclick="answer(1)">Option 2</button>
+    <button onclick="quizAnswer(0)">Option 1</button>
+    <button onclick="quizAnswer(1)">Option 2</button>
   </div>
-
-  <p id="result"></p>
+  <p id="quizResult"></p>
 </section>
 
-<!-- FINAL MESSAGE -->
+<!-- GAME 2: Who Said It -->
+<section class="game">
+  <h2>Who Said It? 💌</h2>
+  <p id="quoteQuestion"></p>
+  <div class="buttons">
+    <button onclick="quoteGuess(0)">You 😌</button>
+    <button onclick="quoteGuess(1)">Me 🥰</button>
+  </div>
+  <p id="quoteResult"></p>
+</section>
+
+<!-- GAME 3: Love Counter -->
+<section class="game">
+  <h2>Click the Heart as Fast as You Can ❤️</h2>
+  <button onclick="addLove()">💖</button>
+  <p>Love points: <span id="lovePoints">0</span></p>
+</section>
+
+<!-- GAME 4: Puzzle of Us -->
+<section class="game">
+  <h2>Puzzle of Us 🧩</h2>
+  <p>Drag the heart into the center!</p>
+  <div class="puzzle-container">
+    <div id="heart" draggable="true" ondragstart="drag(event)">❤️</div>
+    <div id="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  </div>
+  <p id="puzzleResult"></p>
+</section>
+
+<!-- LOVE LETTER -->
 <section class="letter">
   <h2>For You 💌</h2>
   <p>
-    Loving you feels safe and real.<br><br>
-    Thank you for every moment, every laugh,
-    and every feeling we share.
+    Loving you feels easy, safe, and real.<br>
+    Thank you for every moment, every laugh, and every memory we share.
     Hope we make it forever nshallah!
     I Love You Baby 
   </p>
-
   <p id="hidden" class="hidden">
     If you reached this far… it means you’re my forever ❤️
   </p>
-
   <p class="signature">— Yours, always</p>
 </section>
 
