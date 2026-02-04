@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffe6eb, #fff);
+  color: #333;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #d6336c;
+  font-size: 2.5em;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+.puzzle pre {
+  background: #fff;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.hint {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.reveal {
+  background: #fff0f3;
+}
+
+.final {
+  font-size: 1.2em;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+.signature {
+  margin-top: 20px;
+  font-weight: bold;
+}
