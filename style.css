@@ -1,49 +1,25 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ffe6eb, #fff);
-  color: #333;
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-section {
-  padding: 60px 20px;
-  text-align: center;
+.memories img, .video-container video {
+  width: 280px;
+  height: auto;
+  border-radius: 20px;
+  border: 5px solid #fff0f3;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.hero h1 {
+.video-container {
+  max-width: 280px;
+}
+
+.caption {
+  font-size: 14px;
   color: #d6336c;
-  font-size: 2.5em;
-}
-
-.hero p {
-  font-size: 1.2em;
-}
-
-.puzzle pre {
-  background: #fff;
-  display: inline-block;
-  padding: 20px;
-  border-radius: 12px;
-  font-size: 15px;
-  text-align: left;
-}
-
-.hint {
   margin-top: 10px;
-  font-style: italic;
-}
-
-.reveal {
-  background: #fff0f3;
-}
-
-.final {
-  font-size: 1.2em;
-  margin-top: 30px;
-  font-style: italic;
-}
-
-.signature {
-  margin-top: 20px;
-  font-weight: bold;
 }
