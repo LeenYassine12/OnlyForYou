@@ -89,3 +89,35 @@ section {
   border: 2px dashed #d6336c;
   border-radius: 50%;
 }
+
+.valentine {
+  background: linear-gradient(135deg, #ffe6e6, #fff0f3);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.valentine h2 {
+  color: #d6336c;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.valentine p {
+  font-size: 18px;
+  font-style: italic;
+}
+
+/* Floating hearts animation */
+.heart {
+  position: absolute;
+  color: #ff4d6d;
+  font-size: 20px;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-500px) rotate(360deg); opacity: 0; }
+}
