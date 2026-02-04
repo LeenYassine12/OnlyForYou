@@ -1,17 +1,53 @@
-<section class="memories">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Hi my love ❤️</h1>
+    <p>I made this little world just for us.</p>
+  </section>
+
+  <!-- MEMORIES -->
+  <section class="memories">
     <h2>Our Memories 📸</h2>
     <div class="gallery">
-      <img src="wedding_style.jpg" alt="Us looking fancy">
-      <img src="gym_mirror.jpg" alt="Gym selfie">
-      <img src="night_out.jpg" alt="Night out">
-      
-      <div class="video-container">
-        <video width="320" height="560" controls>
-          <source src="gym_video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <p class="caption">I love our goofy gym moments! 😂</p>
-      </div>
+      <img src="photo1.jpg">
+      <img src="photo2.jpg">
+      <img src="photo3.jpg">
     </div>
-    <p class="note">Every moment with you is my favorite.</p>
+    <p class="note">Every picture here holds a piece of my heart.</p>
   </section>
+
+  <!-- GAME -->
+  <section class="game">
+    <h2>How Well Do You Know Us? 🎮</h2>
+
+    <p id="question">Who fell in love first?</p>
+
+    <button onclick="answer('you')">You 😌</button>
+    <button onclick="answer('me')">Me 🥰</button>
+
+    <p id="result"></p>
+  </section>
+
+  <!-- LOVE LETTER -->
+  <section class="letter">
+    <h2>For You 💌</h2>
+    <p>
+      Loving you is my favorite thing.<br>
+      Every day with you feels safe, warm, and special.<br><br>
+      Thank you for choosing me, for loving me,
+      and for being my person.
+    </p>
+    <p class="signature">— Yours, always ❤️</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
