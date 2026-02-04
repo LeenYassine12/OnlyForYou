@@ -58,3 +58,36 @@ function createHeart() {
 }
 
 setInterval(createHeart, 500);
+
+// CONFETTI FUNCTION
+function createConfetti() {
+  const confetti = document.createElement("div");
+  confetti.classList.add("confetti");
+
+  // random horizontal position
+  confetti.style.left = Math.random() * window.innerWidth + "px";
+
+  // random size
+  const size = 5 + Math.random() * 10;
+  confetti.style.width = size + "px";
+  confetti.style.height = size + "px";
+
+  // random color
+  const colors = ["#ff4d6d", "#ff99cc", "#ff1a75", "#ff66b3"];
+  confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+  // add to container
+  document.getElementById("confetti-container").appendChild(confetti);
+
+  // remove after animation ends
+  setTimeout(() => {
+    confetti.remove();
+  }, 3000);
+}
+
+// Show lots of confetti
+function launchConfetti() {
+  for (let i = 0; i < 100; i++) {
+    setTimeout(createConfetti, i * 20);
+  }
+}
