@@ -7,47 +7,63 @@
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Hi my love ❤️</h1>
-    <p>I made this little world just for us.</p>
-  </section>
+<!-- BACKGROUND MUSIC -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-  <!-- MEMORIES -->
-  <section class="memories">
-    <h2>Our Memories 📸</h2>
-    <div class="gallery">
-      <img src="photo1.jpeg">
-      <img src="photo2.jpeg">
-      <img src="photo3.jpeg">
-    </div>
-    <p class="note">Every picture here holds a piece of my heart.</p>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <h1>Hi my love ❤️</h1>
+  <p>This little website is just for you.</p>
+</section>
 
-  <!-- GAME -->
-  <section class="game">
-    <h2>How Well Do You Know Us? 🎮</h2>
+<!-- COUNTDOWN -->
+<section class="countdown">
+  <h2>Our 4 Months In ⏳</h2>
+  <p id="timer"></p>
+</section>
 
-    <p id="question">Who fell in love first?</p>
+<!-- MEMORIES -->
+<section class="memories">
+  <h2>Our Memories 📸</h2>
+  <div class="gallery">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+  </div>
+  <p class="note">Every picture here means everything to me.</p>
+</section>
 
-    <button onclick="answer('you')">You 😌</button>
-    <button onclick="answer('me')">Me 🥰</button>
+<!-- GAME -->
+<section class="game">
+  <h2>How Well Do You Know Us? 🎮</h2>
+  <p id="question"></p>
 
-    <p id="result"></p>
-  </section>
+  <div class="buttons">
+    <button onclick="answer(0)">Option 1</button>
+    <button onclick="answer(1)">Option 2</button>
+  </div>
 
-  <!-- LOVE LETTER -->
-  <section class="letter">
-    <h2>For You 💌</h2>
-    <p>
-      Loving you is my favorite thing.<br>
-      Every day with you feels safe, warm, and special.<br><br>
-      Thank you for choosing me, for loving me,
-      and for being my person.
-    </p>
-    <p class="signature">— Yours, always ❤️</p>
-  </section>
+  <p id="result"></p>
+</section>
 
-  <script src="script.js"></script>
+<!-- FINAL MESSAGE -->
+<section class="letter">
+  <h2>For You 💌</h2>
+  <p>
+    Loving you feels easy, safe, and real.<br><br>
+    Thank you for every moment, every laugh,
+    and every feeling we share.
+  </p>
+
+  <p id="hidden" class="hidden">
+    If you reached this far… it means you’re my forever ❤️
+  </p>
+
+  <p class="signature">— Yours, always</p>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
