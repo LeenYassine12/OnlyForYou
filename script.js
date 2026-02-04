@@ -42,3 +42,19 @@ function addLove(){points++;document.getElementById("lovePoints").innerHTML=poin
 function allowDrop(ev){ev.preventDefault();}
 function drag(ev){ev.dataTransfer.setData("text", ev.target.id);}
 function drop(ev){ev.preventDefault();var data=ev.dataTransfer.getData("text");ev.target.appendChild(document.getElementById(data));document.getElementById("puzzleResult").innerHTML="You completed our love ❤️";}
+
+// Floating hearts for Valentine's
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.fontSize = 15 + Math.random() * 25 + "px";
+  document.querySelector(".valentine").appendChild(heart);
+  heart.innerHTML = "❤️";
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 500);
