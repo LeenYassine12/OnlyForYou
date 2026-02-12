@@ -185,11 +185,11 @@
         <div style="text-align: left; margin-top: 20px;">
             <div class="list-item">
                 <input type="checkbox" id="item1" checked>
-                <label for="item1">First 4 months of us ✨</label>
+                <label for="item1">Marry You ♾️ 💍</label>
             </div>
             <div class="list-item">
                 <input type="checkbox" id="item2">
-                <label for="item2">Our first big road trip 🚗</label>
+                <label for="item2">Travel the world with you 🌍</label>
             </div>
             <div class="list-item">
                 <input type="checkbox" id="item3">
@@ -197,7 +197,7 @@
             </div>
             <div class="list-item">
                 <input type="checkbox" id="item4">
-                <label for="item4">Finally watch that movie you keep mentioning 🍿</label>
+                <label for="item4">Building our own house together🧱 ❤️ 🏠</label>
             </div>
         </div>
     </div>
@@ -301,7 +301,7 @@
         Click for a secret note 🤫
     </button>
     <p id="secretNote" class="hidden" style="margin-top: 20px; font-style: italic; color: var(--modern-red);">
-        "I knew you were the one when you [insert your favorite memory here]."
+        "I Wanna kiss you so badddd."
     </p>
 </footer>
 
@@ -310,6 +310,29 @@ function revealNote() {
     document.getElementById('secretNote').classList.toggle('reveal');
     document.getElementById('noteBtn').innerText = "Our Little Secret";
 }
+</script>
+    <script>
+document.addEventListener('mousemove', function(e) {
+    const trail = document.createElement('div');
+    trail.innerHTML = '❤️';
+    trail.style.position = 'fixed';
+    trail.style.left = e.clientX + 'px';
+    trail.style.top = e.clientY + 'px';
+    trail.style.fontSize = '10px';
+    trail.style.pointerEvents = 'none';
+    trail.style.opacity = '0.7';
+    trail.style.transition = 'all 0.8s ease';
+    document.body.appendChild(trail);
+
+    setTimeout(() => {
+        trail.style.transform = `translateY(-20px) scale(2)`;
+        trail.style.opacity = '0';
+    }, 50);
+
+    setTimeout(() => {
+        trail.remove();
+    }, 800);
+});
 </script>
 </body>
 </html>
