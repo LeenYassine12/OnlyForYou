@@ -6,89 +6,122 @@
 <title>For My Love ❤️</title>
 
 <style>
+
+/* ===== 2026 MODERN COLORS ===== */
+:root {
+  --deep-red: #b11226;
+  --modern-red: #e10600;
+  --soft-pink: #ff4f81;
+  --light-pink: #ffe6ec;
+  --blush: #fff1f5;
+}
+
+/* ===== BODY ===== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, var(--blush), var(--light-pink));
   text-align: center;
   overflow-x: hidden;
+  color: #2c2c2c;
 }
 
+/* ===== SECTIONS ===== */
 section {
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
+/* ===== HEADINGS ===== */
 h1, h2 {
-  color: #d63384;
+  background: linear-gradient(90deg, var(--deep-red), var(--soft-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
 
-p {
-  color: #444;
-  font-size: 18px;
+/* ===== GLASS CARD EFFECT ===== */
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 8px 30px rgba(225, 6, 0, 0.1);
 }
 
+/* ===== BUTTONS ===== */
 button {
-  padding: 12px 25px;
+  padding: 14px 28px;
   margin: 10px;
   font-size: 16px;
-  background: hotpink;
+  border-radius: 40px;
   border: none;
-  border-radius: 30px;
-  color: white;
   cursor: pointer;
+  background: linear-gradient(90deg, var(--modern-red), var(--soft-pink));
+  color: white;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(225, 6, 0, 0.3);
 }
 
 button:hover {
-  background: deeppink;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(225, 6, 0, 0.4);
 }
 
+/* ===== GALLERY ===== */
 .gallery img {
   width: 180px;
   height: 180px;
   object-fit: cover;
   border-radius: 20px;
   margin: 10px;
+  box-shadow: 0 6px 20px rgba(177, 18, 38, 0.2);
 }
 
+/* ===== HEART BUTTON ===== */
+#heartBtn {
+  font-size: 70px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#heartBtn:hover {
+  transform: scale(1.2);
+}
+
+/* ===== HIDDEN ===== */
 .hidden {
   display: none;
 }
 
-#heartBtn {
-  font-size: 60px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.love-photo {
-  width: 250px;
-  border-radius: 20px;
-  margin-top: 20px;
-}
-
+/* ===== FADE ANIMATION ===== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
+  from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
 
 #secret {
-  animation: fadeIn 1.5s ease;
+  animation: fadeIn 1.2s ease;
 }
 
-/* Floating hearts */
+/* ===== FLOATING HEARTS ===== */
 .heart {
   position: fixed;
   bottom: -20px;
   font-size: 20px;
   animation: floatUp 6s linear infinite;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 @keyframes floatUp {
   0% { transform: translateY(0); }
   100% { transform: translateY(-110vh); }
 }
+
 </style>
 </head>
 
@@ -96,56 +129,57 @@ button:hover {
 
 <!-- INTRO -->
 <section>
-  <h1>Hi My Love 💕</h1>
-  <p>HAPPY VALENTINE BABYYYY</p>
+  <div class="card">
+    <h1>Hi My Love ❤️</h1>
+    <p>
+      This little space is just ours.  
+      Modern. Soft. Romantic. Just like us.
+    </p>
+  </div>
 </section>
 
 <!-- PHOTOS -->
 <section>
-  <h2>Us 🤍</h2>
-  <div class="gallery">
-    <img src="photo2.jpg">
-    <img src="photo1.jpg">
-    <img src="photo3.jpg">
+  <div class="card">
+    <h2>Us 🤍</h2>
+    <div class="gallery">
+      <img src="us1.jpg">
+      <img src="us2.jpg">
+      <img src="us3.jpg">
+    </div>
   </div>
 </section>
 
-<!-- GAME 1 -->
+<!-- MINI GAME -->
 <section>
-  <h2>How well do you know us? 😏</h2>
-  <p>When did we first talk?</p>
-  <button onclick="correct()">maybe 22-08💖</button>
-  <button onclick="wrong()">I forgot 😭</button>
+  <div class="card">
+    <h2>How well do you know us? 😏</h2>
+    <p>When did we first talk?</p>
+    <button onclick="correct()">The exact day 💖</button>
+    <button onclick="wrong()">I forgot 😭</button>
+  </div>
 </section>
 
-<!-- GAME 2 -->
+<!-- VALENTINE REVEAL -->
 <section>
-  <h2>Choose our best memory</h2>
-  <button onclick="confettiEffect()">Our first date</button>
-  <button onclick="confettiEffect()">The first time you saw me</button>
-  <button onclick="confettiEffect()">All of them ❤️</button>
-</section>
+  <div class="card">
+    <h2>One last thing… 💘</h2>
+    <button id="heartBtn">❤️</button>
 
-<!-- TIKTOK STYLE REVEAL -->
-<section>
-  <h2>One last thing… 💘</h2>
-  <button id="heartBtn">💖</button>
-
-  <div id="secret" class="hidden">
-    <h1>I LOVE YOU BABY💌</h1>
-    <p>
-      3 months and 25 days… almost 4 months…  
-      and I would still choose you every single time.
-      I hope it won't be our 1st valentine together nshallah! 
-      Always looking forward with you!
-    </p>
-    <img src="us1.jpg" class="love-photo">
+    <div id="secret" class="hidden">
+      <h1>Will You Be My Valentine? 💌</h1>
+      <p>
+        Almost 4 months…  
+        and I would still choose you every single time.
+      </p>
+    </div>
   </div>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <script>
+
 function correct() {
   confettiEffect();
   alert("Correct 😍 You know us too well!");
@@ -162,22 +196,24 @@ document.getElementById("heartBtn").addEventListener("click", function() {
 
 function confettiEffect() {
   confetti({
-    particleCount: 200,
-    spread: 100,
-    origin: { y: 0.6 }
+    particleCount: 220,
+    spread: 120,
+    origin: { y: 0.6 },
+    colors: ["#e10600", "#ff4f81", "#ffccd5"]
   });
 }
 
-/* Floating hearts animation */
+/* Floating hearts */
 setInterval(() => {
   const heart = document.createElement("div");
   heart.classList.add("heart");
   heart.innerHTML = "❤️";
   heart.style.left = Math.random() * window.innerWidth + "px";
-  heart.style.fontSize = (10 + Math.random() * 20) + "px";
+  heart.style.fontSize = (12 + Math.random() * 18) + "px";
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 6000);
-}, 500);
+}, 600);
+
 </script>
 
 </body>
