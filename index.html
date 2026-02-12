@@ -5,34 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For My Love ❤️</title>
     <style>
-        /* ===== MODERN PRESET ===== */
         :root {
             --deep-red: #d00000;
             --modern-red: #ff1155;
             --soft-pink: #ff85a1;
             --light-pink: #fbb1bd;
             --blush: #ffeeef;
-            --white-glass: rgba(255, 255, 255, 0.7);
+            --white-glass: rgba(255, 255, 255, 0.75);
         }
 
-        * {
-            box-sizing: border-box;
-            transition: all 0.3s ease-in-out;
-        }
+        * { box-sizing: border-box; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
         body {
             margin: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background: linear-gradient(135deg, var(--blush) 0%, #ffffff 50%, var(--light-pink) 100%);
             background-attachment: fixed;
             color: #440011;
             overflow-x: hidden;
-            line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* ===== LAYOUT ===== */
         section {
-            min-height: 80vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -44,181 +39,113 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 30px;
+            border-radius: 35px;
             padding: 50px 30px;
-            max-width: 550px;
+            max-width: 500px;
             width: 100%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 20px 60px rgba(255, 133, 161, 0.15);
             text-align: center;
         }
 
-        /* ===== TYPOGRAPHY ===== */
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             background: linear-gradient(45deg, var(--deep-red), var(--modern-red));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            color: var(--modern-red);
-            font-weight: 600;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #660022;
-            opacity: 0.9;
-        }
-
-        /* ===== INTERACTIVE ELEMENTS ===== */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
+            margin-bottom: 10px;
         }
 
         .gallery img {
-            width: 140px;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 20px;
-            border: 4px solid white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            width: 130px; height: 130px; object-fit: cover;
+            border-radius: 20px; border: 4px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            margin: 5px;
         }
 
-        .gallery img:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        .btn-group {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+        .btn-group { margin-top: 25px; display: flex; flex-direction: column; gap: 12px; }
 
         button {
-            padding: 15px 35px;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
+            padding: 16px 30px; border-radius: 50px; border: none; cursor: pointer;
             background: linear-gradient(135deg, var(--modern-red), var(--soft-pink));
-            color: white;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            box-shadow: 0 10px 20px rgba(255, 17, 85, 0.2);
+            color: white; font-weight: 700; font-size: 1rem;
         }
 
-        button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 17, 85, 0.4);
+        button.secondary { background: white; color: var(--modern-red); border: 2px solid var(--soft-pink); }
+
+        #game-feedback {
+            margin-top: 20px;
+            font-weight: 600;
+            min-height: 24px;
+            color: var(--deep-red);
+            transform: scale(0);
+            transition: 0.3s;
         }
 
-        button.secondary {
-            background: white;
-            color: var(--modern-red);
-            border: 2px solid var(--soft-pink);
-        }
+        #game-feedback.show { transform: scale(1); }
 
-        /* ===== ANIMATIONS ===== */
         #heartBtn {
-            font-size: 80px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            animation: beat 1.5s infinite;
-            display: block;
-            margin: 0 auto;
+            font-size: 90px; background: none; border: none; cursor: pointer;
+            animation: beat 1.5s infinite; margin-top: 20px;
         }
 
-        @keyframes beat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
-        }
+        @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
-        .hidden {
-            display: none;
-            opacity: 0;
-        }
-
-        .reveal {
-            display: block !important;
-            animation: fadeInUp 1s forwards;
-        }
+        .hidden { display: none; opacity: 0; }
+        .reveal { display: block !important; animation: fadeInUp 1s forwards; }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== FLOATING HEARTS ===== */
-        .heart {
-            position: fixed;
-            bottom: -50px;
-            font-size: 20px;
-            user-select: none;
-            pointer-events: none;
-            z-index: -1;
-            animation: floatUp 5s linear forwards;
-        }
-
-        @keyframes floatUp {
-            to {
-                transform: translateY(-120vh) translateX(50px);
-                opacity: 0;
-            }
-        }
+        .heart { position: fixed; bottom: -50px; z-index: -1; animation: floatUp 5s linear forwards; }
+        @keyframes floatUp { to { transform: translateY(-120vh) rotate(360deg); opacity: 0; } }
     </style>
 </head>
-
 <body>
 
     <section>
         <div class="card">
             <h1>Hi My Love ❤️</h1>
-            <p>I built this little corner of the internet just for us. Scroll down to see why...</p>
+            <p>I built this space to remind you how much you mean to me.</p>
         </div>
     </section>
 
     <section>
         <div class="card">
-            <h2>Our Moments 🤍</h2>
+            <h2>Our Journey 🤍</h2>
             <div class="gallery">
-                <img src="photo2.jpg" alt="Us 1">
-                <img src="photo1.jpg" alt="Us 2">
-                <img src="photo3.jpg" alt="Us 3">
+                <img src="photo2.jpg" alt="Us">
+                <img src="photo1.jpg" alt="Us">
+                <img src="photo3.jpg" alt="Us">
             </div>
-            <p style="margin-top: 20px;">Every day with you is my favorite day.</p>
+            <p>Every moment has been a dream.</p>
         </div>
     </section>
 
-    <section>
+    <section id="game-section">
         <div class="card">
-            <h2>The Big Question 😏</h2>
-            <p>Do you remember the exact day we first spoke?</p>
+            <h2>The Quick Test 😏</h2>
+            <p>Do you remember the exact day we first talked?</p>
             <div class="btn-group">
-                <button onclick="correct()">Yes, I'm a genius 💖</button>
-                <button class="secondary" onclick="wrong()">I need a hint... 😭</button>
+                <button onclick="respond('correct')">Yes, of course! 💖</button>
+                <button class="secondary" onclick="respond('wrong')">Remind me? 😭</button>
             </div>
+            <div id="game-feedback"></div>
         </div>
     </section>
 
     <section>
         <div class="card">
-            <h2>Wait, one more thing...</h2>
+            <h2 id="final-title">One last thing...</h2>
             <button id="heartBtn">❤️</button>
 
             <div id="secret" class="hidden">
-                <h1>Will You Be My Valentine? 💌</h1>
+                <h1>HAPPY VALENTINES BABY 💌</h1>
                 <p>
                     It's been almost 4 months, and every second has been magic.<br>
-                    <strong>I'd choose you every single time.</strong>
+                    <strong>I'd choose you every single time.
+                    I LOVEEE YOUUU</strong>
                 </p>
             </div>
         </div>
@@ -227,20 +154,36 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <script>
-        function correct() {
-            confettiEffect();
-            alert("Correct! I knew you'd remember. 😍");
-        }
-
-        function wrong() {
-            alert("It’s okay! I’ll keep reminding you forever. ❤️");
+        function respond(type) {
+            const feedback = document.getElementById('game-feedback');
+            feedback.classList.remove('show');
+            
+            setTimeout(() => {
+                if (type === 'correct') {
+                    feedback.innerText = "Correct! You know us so well. 😍";
+                    feedback.style.color = "#d00000";
+                    confettiEffect();
+                } else {
+                    feedback.innerText = "It's okay, I'll remind you forever. ❤️";
+                    feedback.style.color = "#ff85a1";
+                }
+                feedback.classList.add('show');
+            }, 100);
         }
 
         document.getElementById("heartBtn").addEventListener("click", function() {
             const secret = document.getElementById("secret");
+            const title = document.getElementById("final-title");
+            
+            title.style.display = "none";
+            this.style.display = "none";
             secret.classList.add("reveal");
-            this.style.display = "none"; // Hides the big heart after clicking
+            
             confettiEffect();
+            
+            // Extra "Wow" confetti
+            setTimeout(confettiEffect, 500);
+            setTimeout(confettiEffect, 1000);
         });
 
         function confettiEffect() {
@@ -252,18 +195,16 @@
             });
         }
 
-        // Improved Floating hearts
         setInterval(() => {
             const heart = document.createElement("div");
             heart.classList.add("heart");
             heart.innerHTML = "❤️";
             heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-            heart.style.opacity = Math.random();
+            heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+            heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
             document.body.appendChild(heart);
-            
-            setTimeout(() => { heart.remove(); }, 5000);
-        }, 400);
+            setTimeout(() => heart.remove(), 5000);
+        }, 600);
     </script>
 </body>
 </html>
