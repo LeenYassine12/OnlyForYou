@@ -103,7 +103,28 @@
     </style>
 </head>
 <body>
+<div id="counter" style="margin-top: 20px; font-weight: 800; color: var(--modern-red); font-size: 1.2rem;">
+    Loading our time...
+</div>
 
+<script>
+    // Set your anniversary date here: Year, Month (0-11), Day
+    const startDate = new Date(2025, 10, 19); // Example: Oct 15, 2025
+
+    function updateCounter() {
+        const now = new Date();
+        const diff = now - startDate;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diff / 1000 / 60) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+
+        document.getElementById('counter').innerHTML = 
+            `${days} Days, ${hours}h, ${mins}m, ${secs}s`;
+    }
+    setInterval(updateCounter, 1000);
+</script>
     <section>
         <div class="card">
             <h1>Hi My Love ❤️</h1>
@@ -113,7 +134,7 @@
 
     <section>
         <div class="card">
-            <h2>Our Journey 🤍</h2>
+            <h2>Our Journey Nshallah🤍</h2>
             <div class="gallery">
                 <img src="photo2.jpg" alt="Us">
                 <img src="photo1.jpg" alt="Us">
@@ -122,6 +143,29 @@
             <p>Every moment has been a dream.</p>
         </div>
     </section>
+    
+    <section>
+    <div class="card">
+        <h2>3 Reasons Why... 💌</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+            <div style="background: white; padding: 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <span style="font-size: 25px;">✨</span><br>
+                <strong>The Vibe</strong><br>
+                How you always make me laugh.
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <span style="font-size: 25px;">🎧</span><br>
+                <strong>Our Music</strong><br>
+                Sharing songs every night.
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05); grid-column: span 2;">
+                <span style="font-size: 25px;">🫂</span><br>
+                <strong>The Safe Space</strong><br>
+                How 4 months feels like a lifetime in the best way.
+            </div>
+        </div>
+    </div>
+</section>
 
     <section id="game-section">
         <div class="card">
