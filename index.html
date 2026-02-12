@@ -1,220 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Love ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <style>
+        /* ===== MODERN PRESET ===== */
+        :root {
+            --deep-red: #d00000;
+            --modern-red: #ff1155;
+            --soft-pink: #ff85a1;
+            --light-pink: #fbb1bd;
+            --blush: #ffeeef;
+            --white-glass: rgba(255, 255, 255, 0.7);
+        }
 
-<style>
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out;
+        }
 
-/* ===== 2026 MODERN COLORS ===== */
-:root {
-  --deep-red: #b11226;
-  --modern-red: #e10600;
-  --soft-pink: #ff4f81;
-  --light-pink: #ffe6ec;
-  --blush: #fff1f5;
-}
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--blush) 0%, #ffffff 50%, var(--light-pink) 100%);
+            background-attachment: fixed;
+            color: #440011;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-/* ===== BODY ===== */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: linear-gradient(180deg, var(--blush), var(--light-pink));
-  text-align: center;
-  overflow-x: hidden;
-  color: #2c2c2c;
-}
+        /* ===== LAYOUT ===== */
+        section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
 
-/* ===== SECTIONS ===== */
-section {
-  padding: 80px 20px;
-}
+        .card {
+            background: var(--white-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            padding: 50px 30px;
+            max-width: 550px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
 
-/* ===== HEADINGS ===== */
-h1, h2 {
-  background: linear-gradient(90deg, var(--deep-red), var(--soft-pink));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-}
+        /* ===== TYPOGRAPHY ===== */
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--deep-red), var(--modern-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
 
-/* ===== GLASS CARD EFFECT ===== */
-.card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(15px);
-  border-radius: 25px;
-  padding: 40px 20px;
-  margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 8px 30px rgba(225, 6, 0, 0.1);
-}
+        h2 {
+            color: var(--modern-red);
+            font-weight: 600;
+        }
 
-/* ===== BUTTONS ===== */
-button {
-  padding: 14px 28px;
-  margin: 10px;
-  font-size: 16px;
-  border-radius: 40px;
-  border: none;
-  cursor: pointer;
-  background: linear-gradient(90deg, var(--modern-red), var(--soft-pink));
-  color: white;
-  font-weight: 600;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 15px rgba(225, 6, 0, 0.3);
-}
+        p {
+            font-size: 1.1rem;
+            color: #660022;
+            opacity: 0.9;
+        }
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(225, 6, 0, 0.4);
-}
+        /* ===== INTERACTIVE ELEMENTS ===== */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
 
-/* ===== GALLERY ===== */
-.gallery img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 20px;
-  margin: 10px;
-  box-shadow: 0 6px 20px rgba(177, 18, 38, 0.2);
-}
+        .gallery img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 4px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-/* ===== HEART BUTTON ===== */
-#heartBtn {
-  font-size: 70px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
+        .gallery img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
 
-#heartBtn:hover {
-  transform: scale(1.2);
-}
+        .btn-group {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
 
-/* ===== HIDDEN ===== */
-.hidden {
-  display: none;
-}
+        button {
+            padding: 15px 35px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--modern-red), var(--soft-pink));
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 20px rgba(255, 17, 85, 0.2);
+        }
 
-/* ===== FADE ANIMATION ===== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 17, 85, 0.4);
+        }
 
-#secret {
-  animation: fadeIn 1.2s ease;
-}
+        button.secondary {
+            background: white;
+            color: var(--modern-red);
+            border: 2px solid var(--soft-pink);
+        }
 
-/* ===== FLOATING HEARTS ===== */
-.heart {
-  position: fixed;
-  bottom: -20px;
-  font-size: 20px;
-  animation: floatUp 6s linear infinite;
-  opacity: 0.5;
-}
+        /* ===== ANIMATIONS ===== */
+        #heartBtn {
+            font-size: 80px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            animation: beat 1.5s infinite;
+            display: block;
+            margin: 0 auto;
+        }
 
-@keyframes floatUp {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-110vh); }
-}
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
 
-</style>
+        .hidden {
+            display: none;
+            opacity: 0;
+        }
+
+        .reveal {
+            display: block !important;
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== FLOATING HEARTS ===== */
+        .heart {
+            position: fixed;
+            bottom: -50px;
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            z-index: -1;
+            animation: floatUp 5s linear forwards;
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translateY(-120vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
-<section>
-  <div class="card">
-    <h1>Hi My Love ❤️</h1>
-    <p>
-      This little space is just ours.  
-      Modern. Soft. Romantic. Just like us.
-    </p>
-  </div>
-</section>
+    <section>
+        <div class="card">
+            <h1>Hi My Love ❤️</h1>
+            <p>I built this little corner of the internet just for us. Scroll down to see why...</p>
+        </div>
+    </section>
 
-<!-- PHOTOS -->
-<section>
-  <div class="card">
-    <h2>Us 🤍</h2>
-    <div class="gallery">
-      <img src="us1.jpg">
-      <img src="us2.jpg">
-      <img src="us3.jpg">
-    </div>
-  </div>
-</section>
+    <section>
+        <div class="card">
+            <h2>Our Moments 🤍</h2>
+            <div class="gallery">
+                <img src="photo2.jpg" alt="Us 1">
+                <img src="photo1.jpg" alt="Us 2">
+                <img src="photo3.jpg" alt="Us 3">
+            </div>
+            <p style="margin-top: 20px;">Every day with you is my favorite day.</p>
+        </div>
+    </section>
 
-<!-- MINI GAME -->
-<section>
-  <div class="card">
-    <h2>How well do you know us? 😏</h2>
-    <p>When did we first talk?</p>
-    <button onclick="correct()">The exact day 💖</button>
-    <button onclick="wrong()">I forgot 😭</button>
-  </div>
-</section>
+    <section>
+        <div class="card">
+            <h2>The Big Question 😏</h2>
+            <p>Do you remember the exact day we first spoke?</p>
+            <div class="btn-group">
+                <button onclick="correct()">Yes, I'm a genius 💖</button>
+                <button class="secondary" onclick="wrong()">I need a hint... 😭</button>
+            </div>
+        </div>
+    </section>
 
-<!-- VALENTINE REVEAL -->
-<section>
-  <div class="card">
-    <h2>One last thing… 💘</h2>
-    <button id="heartBtn">❤️</button>
+    <section>
+        <div class="card">
+            <h2>Wait, one more thing...</h2>
+            <button id="heartBtn">❤️</button>
 
-    <div id="secret" class="hidden">
-      <h1>Will You Be My Valentine? 💌</h1>
-      <p>
-        Almost 4 months…  
-        and I would still choose you every single time.
-      </p>
-    </div>
-  </div>
-</section>
+            <div id="secret" class="hidden">
+                <h1>Will You Be My Valentine? 💌</h1>
+                <p>
+                    It's been almost 4 months, and every second has been magic.<br>
+                    <strong>I'd choose you every single time.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-<script>
+    <script>
+        function correct() {
+            confettiEffect();
+            alert("Correct! I knew you'd remember. 😍");
+        }
 
-function correct() {
-  confettiEffect();
-  alert("Correct 😍 You know us too well!");
-}
+        function wrong() {
+            alert("It’s okay! I’ll keep reminding you forever. ❤️");
+        }
 
-function wrong() {
-  alert("It’s okay… I’ll remind you forever ❤️");
-}
+        document.getElementById("heartBtn").addEventListener("click", function() {
+            const secret = document.getElementById("secret");
+            secret.classList.add("reveal");
+            this.style.display = "none"; // Hides the big heart after clicking
+            confettiEffect();
+        });
 
-document.getElementById("heartBtn").addEventListener("click", function() {
-  document.getElementById("secret").classList.remove("hidden");
-  confettiEffect();
-});
+        function confettiEffect() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ff1155', '#ff85a1', '#ffffff']
+            });
+        }
 
-function confettiEffect() {
-  confetti({
-    particleCount: 220,
-    spread: 120,
-    origin: { y: 0.6 },
-    colors: ["#e10600", "#ff4f81", "#ffccd5"]
-  });
-}
-
-/* Floating hearts */
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * window.innerWidth + "px";
-  heart.style.fontSize = (12 + Math.random() * 18) + "px";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
-}, 600);
-
-</script>
-
+        // Improved Floating hearts
+        setInterval(() => {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+            heart.style.opacity = Math.random();
+            document.body.appendChild(heart);
+            
+            setTimeout(() => { heart.remove(); }, 5000);
+        }, 400);
+    </script>
 </body>
 </html>
