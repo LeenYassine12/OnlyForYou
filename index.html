@@ -178,7 +178,53 @@
             <div id="game-feedback"></div>
         </div>
     </section>
+<section>
+    <div class="card">
+        <h2>Our Future ✈️</h2>
+        <p>Things I can't wait to do with you:</p>
+        <div style="text-align: left; margin-top: 20px;">
+            <div class="list-item">
+                <input type="checkbox" id="item1" checked>
+                <label for="item1">First 4 months of us ✨</label>
+            </div>
+            <div class="list-item">
+                <input type="checkbox" id="item2">
+                <label for="item2">Our first big road trip 🚗</label>
+            </div>
+            <div class="list-item">
+                <input type="checkbox" id="item3">
+                <label for="item3">Cook a 3-course dinner together 🍝</label>
+            </div>
+            <div class="list-item">
+                <input type="checkbox" id="item4">
+                <label for="item4">Finally watch that movie you keep mentioning 🍿</label>
+            </div>
+        </div>
+    </div>
+</section>
 
+<style>
+    .list-item {
+        background: white;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+    input[type="checkbox"] {
+        accent-color: var(--modern-red);
+        width: 20px;
+        height: 20px;
+    }
+    label {
+        font-weight: 500;
+        color: #440011;
+    }
+</style>
+    
     <section>
         <div class="card">
             <h2 id="final-title">One last thing...</h2>
@@ -250,5 +296,20 @@
             setTimeout(() => heart.remove(), 5000);
         }, 600);
     </script>
+    <footer style="padding: 40px; text-align: center;">
+    <button class="secondary" onclick="revealNote()" id="noteBtn" style="font-size: 12px; padding: 10px 20px;">
+        Click for a secret note 🤫
+    </button>
+    <p id="secretNote" class="hidden" style="margin-top: 20px; font-style: italic; color: var(--modern-red);">
+        "I knew you were the one when you [insert your favorite memory here]."
+    </p>
+</footer>
+
+<script>
+function revealNote() {
+    document.getElementById('secretNote').classList.toggle('reveal');
+    document.getElementById('noteBtn').innerText = "Our Little Secret";
+}
+</script>
 </body>
 </html>
