@@ -1,105 +1,182 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For You ❤️</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+h1, h2 {
+  color: #d63384;
+}
+
+p {
+  color: #444;
+  font-size: 18px;
+}
+
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 16px;
+  background: hotpink;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: deeppink;
+}
+
+.gallery img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#heartBtn {
+  font-size: 60px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.love-photo {
+  width: 250px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#secret {
+  animation: fadeIn 1.5s ease;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-110vh); }
+}
+</style>
 </head>
+
 <body>
 
-<!-- BACKGROUND MUSIC -->
-<audio autoplay loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<!-- HERO -->
-<section class="hero">
-  <h1>Hi my love ❤️</h1>
-  <p>This website is just for you </p>
+<!-- INTRO -->
+<section>
+  <h1>Hi My Love 💕</h1>
+  <p>This little website is made just for you.</p>
 </section>
 
-<!-- COUNTDOWN -->
-<section class="countdown">
-  <h2>Our 4 Months Countdown ⏳</h2>
-  <p id="timer"></p>
-</section>
-
-<!-- MEMORIES -->
-<section class="memories">
-  <h2>Some of our favs📸</h2>
+<!-- PHOTOS -->
+<section>
+  <h2>Us 🤍</h2>
   <div class="gallery">
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-    <img src="photo3.jpg">
+    <img src="us1.jpg">
+    <img src="us2.jpg">
+    <img src="us3.jpg">
   </div>
-  <p class="note">Every picture here holds a piece of my heart 💖</p>
 </section>
 
-<!-- GAME 1: Love Quiz -->
-<section class="game">
-  <h2>How Well Do You Know Us? </h2>
-  <p id="quizQuestion"></p>
-  <div class="buttons">
-    <button onclick="quizAnswer(0)">Option 1</button>
-    <button onclick="quizAnswer(1)">Option 2</button>
+<!-- GAME 1 -->
+<section>
+  <h2>How well do you know us? 😏</h2>
+  <p>When did we first talk?</p>
+  <button onclick="correct()">The exact day 💖</button>
+  <button onclick="wrong()">I forgot 😭</button>
+</section>
+
+<!-- GAME 2 -->
+<section>
+  <h2>Choose our best memory 🥹</h2>
+  <button onclick="confettiEffect()">Our first date</button>
+  <button onclick="confettiEffect()">Late night talks</button>
+  <button onclick="confettiEffect()">All of them ❤️</button>
+</section>
+
+<!-- TIKTOK STYLE REVEAL -->
+<section>
+  <h2>One last thing… 💘</h2>
+  <button id="heartBtn">💖</button>
+
+  <div id="secret" class="hidden">
+    <h1>Will You Be My Valentine? 💌</h1>
+    <p>
+      3 months and 25 days… almost 4 months…  
+      and I would still choose you every single time.
+    </p>
+    <img src="us1.jpg" class="love-photo">
   </div>
-  <p id="quizResult"></p>
 </section>
 
-<!-- GAME 2: Who Said It -->
-<section class="game">
-  <h2>Who Said It? 💌</h2>
-  <p id="quoteQuestion"></p>
-  <div class="buttons">
-    <button onclick="quoteGuess(0)">You 😌</button>
-    <button onclick="quoteGuess(1)">Me 🥰</button>
-  </div>
-  <p id="quoteResult"></p>
-</section>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-<!-- GAME 3: Love Counter -->
-<section class="game">
-  <h2>Click the Heart as Fast as You Can ❤️</h2>
-  <button onclick="addLove()">💖</button>
-  <p>Love points: <span id="lovePoints">0</span></p>
-</section>
+<script>
+function correct() {
+  confettiEffect();
+  alert("Correct 😍 You know us too well!");
+}
 
-<!-- GAME 4: Puzzle of Us -->
-<section class="game">
-  <h2>Puzzle of Us 🧩</h2>
-  <p>Drag the heart into the center!</p>
-  <div class="puzzle-container">
-    <div id="heart" draggable="true" ondragstart="drag(event)">❤️</div>
-    <div id="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-  </div>
-  <p id="puzzleResult"></p>
-</section>
+function wrong() {
+  alert("It’s okay… I’ll remind you forever ❤️");
+}
 
-  <!-- VALENTINE SPECIAL -->
-<section class="valentine">
-  <h2>Happy Valentine’s Day ❤️</h2>
-  <p>Every moment with you is my favorite.  
-     You make my heart skip beats 🥰</p>
-</section>
+document.getElementById("heartBtn").addEventListener("click", function() {
+  document.getElementById("secret").classList.remove("hidden");
+  confettiEffect();
+});
 
-<!-- LOVE LETTER -->
-<section class="letter">
-  <h2>For You 💌</h2>
-  <p>
-    Loving you feels easy, safe, and real.<br>
-    Thank you for every moment, every laugh, and every memory we share.
-    Hope we make it forever nshallah!
-    I Love You Baby 
-  </p>
-  <p id="hidden" class="hidden">
-    If you reached this far… it means you’re my forever ❤️
-  </p>
-  <p class="signature">— Yours, always</p>
-</section>
+function confettiEffect() {
+  confetti({
+    particleCount: 200,
+    spread: 100,
+    origin: { y: 0.6 }
+  });
+}
 
-<script src="script.js"></script>
-  <!-- CONFETTI -->
-<div id="confetti-container"></div>
+/* Floating hearts animation */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.fontSize = (10 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 500);
+</script>
+
 </body>
 </html>
